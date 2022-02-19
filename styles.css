@@ -1,3 +1,4 @@
+/* Body */
 body{
     display: flex;
     flex-direction: column;
@@ -11,13 +12,17 @@ body{
     font-family: 'Bebas Neue';font-size: 22px;
 }
 
+
+/* Title */
 #title{
-    height:50px;
-    margin:30px 0px 0px 0px;
+    height:5vh;
+    margin:10px 0px 0px 0px;
 
     background-color: #1e3d59;
 }
 
+
+/* Content */
 #content{
     flex-grow: 1;
 
@@ -25,29 +30,22 @@ body{
 
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: stretch; 
-    align-content: center;
-    gap:30px;
-    
 }
 
-#content > div{
-    flex-grow: 1;
-    
 
-}
-
+/* Footer. */
 #footer{
     box-sizing: border-box;
-    height: 50px;
+    height: 5vh;
     padding: 10px;
 
     background-color: #1e3d59;
 }
 
 
-
+/* Misc. */
 .centered{
     display: flex;
     justify-content: center;
