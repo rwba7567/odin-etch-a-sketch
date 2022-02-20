@@ -80,7 +80,6 @@ function resetMode(){
 let size = document.querySelector("#size").value;
 grid(size);
 
-
 //Default values
 let rainbowStatus = false;
 defaultmode();
@@ -98,8 +97,9 @@ document.addEventListener("mouseup", function(){
 
 //color mode configuration
 document.querySelector("#colorMode").addEventListener("click",defaultmode)
-document.getElementById("color").addEventListener("input",function(){
-    selectedColor = document.getElementById("color").value;
+let colorSelector = document.getElementById("color")
+colorSelector.addEventListener("input",function(){
+    selectedColor = colorSelector.value;
 })
 
 //rainbow mode configuration
@@ -133,6 +133,7 @@ document.querySelector("#toggle").addEventListener("input",function(){
     {
         cells.forEach(cell => {
             cell.style.borderColor = "black";
+            cell.style.borderWidth = "1px";
         });
 
     }
@@ -140,6 +141,7 @@ document.querySelector("#toggle").addEventListener("input",function(){
     {
         cells.forEach(cell => {
             cell.style.borderColor = "white";
+            cell.style.borderWidth = "0px";
         });
     }
     
