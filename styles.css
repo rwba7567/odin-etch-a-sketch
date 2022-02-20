@@ -2,6 +2,7 @@
 body{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
     margin: 0px;
     min-height: 100vh;
@@ -13,9 +14,9 @@ body{
 }
 
 
-/* Title */
-#title{
-    height:5vh;
+/* Header */
+#header{
+    height:75px;
     margin:10px 0px 0px 0px;
 
     background-color: #1e3d59;
@@ -24,21 +25,58 @@ body{
 
 /* Content */
 #content{
-    flex-grow: 1;
-
-    padding:30px;
+    padding: 0px 50px;
+    flex-grow: 2;
 
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: stretch; 
+    justify-content: center;
+    align-items: center;
+    gap:50px;
+}
+
+#controls > div{
+    background-color: #ff6e40;
+    padding:10px;
+
+    border: 5px #1e3d59 solid ;
+    border-radius: 5px;
+
+    margin:5px;
+}
+
+#colorMode{
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+}
+
+#range{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+/*Table*/
+table, th, td{
+    box-sizing: border-box;
+    border: 0px solid #f5f0e1;
+    border-collapse: collapse;    
+}
+
+th,td {
+    background-color: white;
+}
+
+td{
+    border:1px solid black;
 }
 
 
 /* Footer. */
 #footer{
     box-sizing: border-box;
-    height: 5vh;
+    height: 75px;
     padding: 10px;
 
     background-color: #1e3d59;
@@ -52,8 +90,6 @@ body{
     align-items: center;
 }
 
-.testcolor{
-    background-color: #ff6e40;
-
+.test{
     border:5px solid black;
 }
