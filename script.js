@@ -5,45 +5,31 @@ function grid(size){
     while (table.hasChildNodes()) {
         table.removeChild(table.firstChild);
     }
-
-
-    let down = 0;
-
-    document.addEventListener("mousedown", function(){
-        down = 1;
-    })
-    document.addEventListener("mouseup", function(){
-        down = 0;
-    })
-
-
     
-
     //create rows
     const row = document.createElement("tr");
-    table.appendChild(row);
     
     for (let i =0; i <size; i++)
     {
-        
         const tableData = document.createElement("td");
         row.appendChild(tableData);
     }
   
-    for (let i =0; i < (size-1); i++)
+    for (let i =0; i < size; i++)
     {
-        const tableRow = document.querySelector("tr")
-        const clone = tableRow.cloneNode(true);
+        const clone = row.cloneNode(true);
         table.appendChild(clone);
     }
 
-    //configure cell size
+    //cell size configuration
     height = 650/size;
     cells = document.querySelectorAll("td")
 
     cells.forEach(cell => {
         cell.style.width = height +"px";
         cell.style.height = height +"px";
+
+        //Cell configuration
         cell.addEventListener("mouseenter",function(e){
             if (down == 1){
                 if (rainbowStatus == true)
@@ -53,6 +39,9 @@ function grid(size){
 
                 e.target.style.backgroundColor=selectedColor;
             }
+        })
+        cell.addEventListener("click",function(e){
+            e.target.style.backgroundColor=selectedColor;
         })
     });
 }
@@ -87,6 +76,16 @@ grid(size);
 
 let rainbowStatus = false;
 defaultmode();
+
+//track mouse button movement
+let down = 0;
+
+document.addEventListener("mousedown", function(){
+    down = 1;
+})
+document.addEventListener("mouseup", function(){
+    down = 0;
+})
 
 //color mode configuration
 document.querySelector("#colorMode").addEventListener("click",defaultmode)
