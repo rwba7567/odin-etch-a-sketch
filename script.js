@@ -98,7 +98,6 @@ document.addEventListener("mouseup", function(){
 
 //color mode configuration
 document.querySelector("#colorMode").addEventListener("click",defaultmode)
-
 document.getElementById("color").addEventListener("input",function(){
     selectedColor = document.getElementById("color").value;
 })
