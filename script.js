@@ -47,12 +47,15 @@ function grid(size){
 }
 
 function defaultColor(selector){
+    //select all buttons
     let others = document.querySelectorAll("#controls > div")
 
+    //change buttons to default color
     others.forEach(other => {
         other.style.backgroundColor = "#ff6e40";
     })  
 
+    //change active button to active color
     document.querySelector(selector).style.backgroundColor = "#ffc12b"
 }
 
@@ -64,7 +67,6 @@ function defaultmode(){
 
 function resetMode(){
     defaultmode();
-    rainbowStatus = false;
 
     cells.forEach(cell => {
         cell.style.backgroundColor = "white";
