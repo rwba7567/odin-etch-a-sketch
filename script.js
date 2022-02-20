@@ -103,16 +103,15 @@ colorSelector.addEventListener("input",function(){
 })
 
 //rainbow mode configuration
-document.querySelector("#rainbow").addEventListener("click",function(){
-    defaultColor("#rainbow")
+document.querySelector("#rainbow").addEventListener("click",function(e){
+    defaultColor("#"+e.target.id);
     rainbowStatus = true;
 })
 
 //eraser button configuration
-document.querySelector("#eraser").addEventListener("click",function(){
-    defaultColor("#eraser");
+document.querySelector("#eraser").addEventListener("click",function(e){
+    defaultColor("#"+e.target.id);
     rainbowStatus = false;
-
     selectedColor = "white";
 })
 
@@ -120,16 +119,18 @@ document.querySelector("#eraser").addEventListener("click",function(){
 document.querySelector("#reset").addEventListener("click",resetMode)
 
 //slider configuration
-document.querySelector("#size").addEventListener("input",function(){
-    size = document.querySelector("#size").value;
+let slider = document.querySelector("#size")
+slider.addEventListener("input",function(){
+    size = slider.value;
     grid(size);
     document.querySelector("#range > div").innerText = size + "x" + size;
     resetMode();
 })
 
 //toggle configuration
-document.querySelector("#toggle").addEventListener("input",function(){
-    if (document.querySelector("#toggle").checked == true)
+let toggle = document.querySelector("#toggle")
+toggle.addEventListener("input",function(){
+    if (toggle.checked == true)
     {
         cells.forEach(cell => {
             cell.style.borderColor = "black";
