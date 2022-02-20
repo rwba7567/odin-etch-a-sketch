@@ -31,7 +31,7 @@ function grid(size){
 
         //Cell configuration
         cell.addEventListener("mouseenter",function(e){
-            if (down == 1){
+            if (down == true){
                 if (rainbowStatus == true)
                 {
                     selectedColor = "#"+Math.floor(Math.random()*16777215).toString(16);
@@ -80,18 +80,21 @@ function resetMode(){
 let size = document.querySelector("#size").value;
 grid(size);
 
+
+//Default values
 let rainbowStatus = false;
 defaultmode();
 
 //track mouse button movement
-let down = 0;
+let down = false;
 
 document.addEventListener("mousedown", function(){
-    down = 1;
+    down = true;
 })
 document.addEventListener("mouseup", function(){
-    down = 0;
+    down = false;
 })
+
 
 //color mode configuration
 document.querySelector("#colorMode").addEventListener("click",defaultmode)
