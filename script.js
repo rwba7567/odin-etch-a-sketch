@@ -126,3 +126,21 @@ document.querySelector("#size").addEventListener("input",function(){
     document.querySelector("#range > div").innerText = size + "x" + size;
     resetMode();
 })
+
+//toggle configuration
+document.querySelector("#toggle").addEventListener("input",function(){
+    if (document.querySelector("#toggle").checked == true)
+    {
+        cells.forEach(cell => {
+            cell.style.borderColor = "black";
+        });
+
+    }
+    else
+    {
+        cells.forEach(cell => {
+            cell.style.borderColor = "white";
+        });
+    }
+    
+})
