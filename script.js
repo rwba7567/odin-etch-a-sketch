@@ -41,6 +41,10 @@ function grid(size){
             }
         })
         cell.addEventListener("click",function(e){
+            if (rainbowStatus == true)
+                {
+                    selectedColor = "#"+Math.floor(Math.random()*16777215).toString(16);
+                }
             e.target.style.backgroundColor=selectedColor;
         })
     });
